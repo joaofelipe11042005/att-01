@@ -1,0 +1,36 @@
+[HttpGet("consulta-tabela-imc")]
+public IActionResult ConsultaTabelaIMC(double imc)
+{
+    string descricao;
+
+    if (imc < 18.5)
+    {
+        descricao = "Abaixo do peso";
+    }
+    else if (imc < 25)
+    {
+        descricao = "Peso normal";
+    }
+    else if (imc < 30)
+    {
+        descricao = "Sobrepeso";
+    }
+    else if (imc < 35)
+    {
+        descricao = "Obesidade grau I";
+    }
+    else if (imc < 40)
+    {
+        descricao = "Obesidade grau II";
+    }
+    else
+    {
+        descricao = "Obesidade grau III";
+    }
+
+    return Ok(new
+    {
+        IMC = imc,
+        Descricao = descricao
+    });
+}
