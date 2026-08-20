@@ -1,0 +1,6 @@
+@att_h1_HostAddress = http://localhost:5232
+
+GET {{att_h1_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
